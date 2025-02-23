@@ -15,7 +15,7 @@ jobs:
     steps:
     # Step 1: Check out the repository
     - name: Checkout repository
-      uses: rikkisamone/my-docker-app
+      uses: actions/checkout@v2
 
     # Step 2: Log in to DockerHub (or any Docker registry you're using)
     - name: Log in to Docker Hub
