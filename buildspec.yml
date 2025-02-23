@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Building Docker image...
+      - docker build -t my-docker-app .
+      - $(aws ecr get-login --no-include-email --region us-west-2)
+      - docker tag my-docker-app:latest 448049816907.dkr.ecr.us-west-2.amazonaws.com/my-docker-app:latest
+      - docker push 448049816907.dkr.ecr.us-west-2.amazonaws.com/my-docker-app:latest
+
+artifacts:
+  files:
+    - '**/*'
