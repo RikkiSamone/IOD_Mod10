@@ -37,3 +37,7 @@ jobs:
     - name: Push Docker image
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/my-docker-app:latest
+
+    # Step 6: Testing 
+    - name: Print Docker Secrets
+      run: echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}"
